@@ -311,7 +311,7 @@ public class OmikujiDAO {
 	 * 運勢コードを元にオブジェクト生成をするクラスです
 	 * 
 	 * @param unseiCode 運勢コード
-	 * @return おみくじクラス
+	 * @return おみくじオブジェクト
 	 */
 	private static Omikuji getOmikuji(String unseiCode) {
 

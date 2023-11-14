@@ -43,6 +43,7 @@ public class ResultDAO {
 	 * 
 	 * @param date 現在のDate型
 	 * @param inputBirthday 入力した誕生日のDate型
+	 * @param omikujiCode　おみくじコード
 	 */
 	public void insertResult(Date date, Date inputBirthday, String omikujiCode) {
 
