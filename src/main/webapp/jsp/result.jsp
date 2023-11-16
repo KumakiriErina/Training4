@@ -1,4 +1,4 @@
-<%@page import="Training4.Omikuji"%>
+<%@page import="omikuji.Omikuji"%>
 <%@page import="dao.OmikujiDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

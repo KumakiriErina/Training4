@@ -13,12 +13,13 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.Random;
 
-import Training4.BadLuck;
-import Training4.GreatBlessing;
-import Training4.MiddleBlassing;
-import Training4.Omikuji;
-import Training4.SmallBlessing;
-import Training4.UncertinLuck;
+import omikuji.BadLuck;
+import omikuji.GoodBlessing;
+import omikuji.GreatBlessing;
+import omikuji.MiddleBlassing;
+import omikuji.Omikuji;
+import omikuji.SmallBlessing;
+import omikuji.UncertinLuck;
 /**
  * Omikujiテーブルです
  * 
@@ -52,16 +53,13 @@ public class OmikujiDAO {
 	//ResultSetの準備
 	ResultSet resultSet = null;
 
-	//おみくじコードの宣言
-	String omikujiCode = "";
-
 	/**
 	 * csvファイルを読み込んで、おみくじテーブルに登録するクラスです
 	 */
 	public void insertOmikuji() {
 
 		//パスの取得
-		Path path = Paths.get("/Users/e_kumakiri/Desktop/workspace/Training4/src/main/java/Fortune.csv");
+		Path path = Paths.get("/Users/e_kumakiri/git/Training4/src/main/webapp/data/Fortune.csv");
 
 		try {
 
@@ -240,7 +238,7 @@ public class OmikujiDAO {
 			//next：次があるか、カーソル の役割
 			if (resultSet.next()) {
 				//おみくじの情報を取得
-				omikujiCode = resultSet.getString("omikuji_code");
+				String omikujiCode = resultSet.getString("omikuji_code");
 				String unseiCode = resultSet.getString("unsei_code");
 				String negaigoto = resultSet.getString("negaigoto");
 				String akinai = resultSet.getString("akinai");
@@ -266,8 +264,8 @@ public class OmikujiDAO {
 			//クラスが見つからなかった時のエラー
 			System.out.println("クラスが見つかりません");
 			ce.printStackTrace();
-		}
 
+		}
 		//おみくじオブジェクトを返す
 		return omikuji;
 	}
@@ -331,7 +329,7 @@ public class OmikujiDAO {
 			return new UncertinLuck();
 
 		case "05":
-			return new GreatBlessing();
+			return new GoodBlessing();
 
 		case "06":
 			return new BadLuck();
